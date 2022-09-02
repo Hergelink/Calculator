@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div id="outer-container">
+      <div id="calc-screen">
+        <input type="text" value="0" id="calc" />
+      </div>
+      <div id="buttons-container">
+        <div id="left-container">
+          <div id="grey-signs">
+            <button id="ac">AC</button>
+            <button id="turn-signs" value="*-1">+/-</button>
+            <button id="percent">%</button>
+          </div>
+
+          <div id="numbers">
+            <div id="first-row">
+              <button id="seven">7</button>
+              <button id="eight">8</button>
+              <button id="nine">9</button>
+            </div>
+            <div id="second-row">
+              <button id="four">4</button>
+              <button id="five">5</button>
+              <button id="six">6</button>
+            </div>
+            <div id="third-row">
+              <button id="one">1</button>
+              <button id="two">2</button>
+              <button id="three">3</button>
+            </div>
+            <div id="fourth-row">
+              <button id="zero">0</button>
+              <button id="dot">.</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="orange-signs">
+          <button id="divided">/</button>
+          <button id="multiply">*</button>
+          <button id="subtract">-</button>
+          <button id="add">+</button>
+          <button id="equal">=</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

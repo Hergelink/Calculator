@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  background-color: black;
+}
+
+button {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 10px;
+  font-size: 30px;
+  border: 0;
+  cursor: pointer;
+}
+
+#outer.container {
+  width: 95%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+#calc-screen {
+  margin-top: 240px;
+  width: 400px;
+  height: 100px;
+  /* padding-right: 100px; */
+  margin-inline: auto;
+  display: block;
+}
+
+#calc {
+  display: block;
+  margin-inline: auto;
+  width: 390px;
+  height: 100px;
+  padding-right: 30px;
+  text-align: right;
+  font-size: 100px;
+  color: white;
+  background-color: transparent;
+  border: 0;
+}
+
+#buttons-container {
+  display: flex;
+  width: 400px;
+  margin-inline: auto;
+}
+
+#zero {
+  width: 180px;
+  text-align: left;
+  padding-left: 30px;
+  border-radius: 40px;
+}
+
+#left-container {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+#grey-signs {
+  display: flex;
+}
+
+#grey-signs button {
+  color: black;
+  background-color: rgb(156, 155, 155);
+}
+
+#orange-signs {
+  display: flex;
+  flex-direction: column;
+}
+
+#orange-signs button {
+  color: white;
+  background-color: orange;
+}
+
+#numbers {
+  display: flex;
+  flex-direction: column;
+}
+
+#numbers button {
+  color: white;
+  background-color: rgb(101, 101, 101);
+}
+
+#first-row {
+  display: flex;
+}
+
+#second-row {
+  display: flex;
+}
+
+#third-row {
+  display: flex;
+}
+
+#fourth-row {
+  display: flex;
+}

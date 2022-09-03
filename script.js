@@ -1,3 +1,9 @@
+//getting the inner height of the viewport for css:
+let vh = window.innerHeight * 0.01;
+//setting the --vh value:
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+
 //Calculator Result
 const calcResult = document.getElementById('calc');
 

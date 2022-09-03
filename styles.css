@@ -81,6 +81,9 @@ button:active {
 #grey-signs button {
   color: black;
   background-color: rgb(156, 155, 155);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #orange-signs {
@@ -91,6 +94,9 @@ button:active {
 #orange-signs button {
   color: white;
   background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #numbers {
@@ -101,6 +107,9 @@ button:active {
 #numbers button {
   color: white;
   background-color: rgb(101, 101, 101);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #first-row {

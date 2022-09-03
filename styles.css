@@ -1,20 +1,27 @@
 body {
   margin: 0;
-  padding: 0;
   height: 100vh;
   font-family: 'Open Sans', sans-serif;
   background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 }
 
 button {
   display: block;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   margin: 10px;
   font-size: 30px;
   border: 0;
   cursor: pointer;
+  filter: brightness(90%);
+}
+
+button:active {
+  filter: brightness(120%);
 }
 
 #outer.container {
@@ -25,20 +32,19 @@ button {
 }
 
 #calc-screen {
-  margin-top: 240px;
-  width: 400px;
   height: 100px;
-  /* padding-right: 100px; */
   margin-inline: auto;
-  display: block;
+  display: flex;
+  justify-content: center;
+  margin-inline: auto;
 }
 
 #calc {
   display: block;
   margin-inline: auto;
-  width: 390px;
+  width: 98%;
   height: 100px;
-  padding-right: 30px;
+  padding-right: 20px;
   text-align: right;
   font-size: 100px;
   color: white;
@@ -48,12 +54,14 @@ button {
 
 #buttons-container {
   display: flex;
-  width: 400px;
+  justify-content: center;
+  width: 98%;
   margin-inline: auto;
+  margin-bottom: 0.5rem;
 }
 
 #zero {
-  width: 180px;
+  width: 60%;
   text-align: left;
   padding-left: 30px;
   border-radius: 40px;
@@ -108,4 +116,21 @@ button {
 
 #fourth-row {
   display: flex;
+}
+
+@media only screen and (min-width: 680px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #calc-screen {
+    width: 400px;
+  }
+
+  #calc {
+    padding-right: 35px;
+  }
 }

@@ -5,6 +5,7 @@ const calcResult = document.getElementById('calc');
 //grey signs:
 const clearButton = document.getElementById('ac');
 const turnSignsButton = document.getElementById('turn-signs');
+const percentageButton = document.getElementById('percent');
 //orange signs:
 const equalButton = document.getElementById('equal');
 
@@ -13,8 +14,6 @@ const buttonsContainer = document.getElementById('buttons-container');
 
 let result = [];
 
-console.log(calcResult.value);
-
 // Catch Button innerHTML's and Push to Result Array
 buttonsContainer.addEventListener('click', (event) => {
   const isButton = event.target.nodeName === 'BUTTON';
@@ -22,40 +21,68 @@ buttonsContainer.addEventListener('click', (event) => {
     !isButton ||
     event.target.id === 'equal' ||
     event.target.id === 'turn-signs' ||
-    event.target.id === 'ac'
+    event.target.id === 'ac' ||
+    event.target.id === 'percent'
   ) {
     return;
   }
-  
+
   result.push(event.target.innerHTML);
-  
+
   let finalResult = result;
   let joined = finalResult.join('');
-  
+
   calcResult.value = joined;
 });
 
-console.log(result);
+//Special button elements:
 
-//Show Inputs in the Calc Screen Input
+//Turn Signs (positive to negative)
+turnSignsButton.addEventListener('click', () => {
+  // get the digits after a sign
+  let regEx = /\d+$/g;
 
-// Special Buttons of which will not be pushed to the Results Array:
+  let string = result;
+  let finalString = string.join('');
+  const lastChar = finalString.match(regEx);
+
+  let signTurned = lastChar * -1;
+
+  let inParentheses = `(${signTurned})`;
+
+  let finalResult = result;
+  //pop & push mutates the original array
+  let popped = finalResult.pop(regEx);
+  let lastStep = finalResult.push(inParentheses);
+
+  let joined = finalResult.join('');
+
+  calcResult.value = joined;
+});
+
+// Percentage Sign Function
+
+percentageButton.addEventListener('click', () => {
+  let percentageValue = calcResult.value / 100;
+
+  calcResult.value = percentageValue;
+});
 
 // Final Calculation & Answer (Equal Sign Button):
 function calculate() {
+  if (calcResult.value == 0) {
+    return;
+  } else {
+    let finalResult = result;
+    let joined = finalResult.join('');
 
-  let finalResult = result;
-  let joined = finalResult.join('');
-  console.log(joined);
-  
-  let finalAnswer = eval(joined);
+    let finalAnswer = eval(joined);
 
-  calcResult.value = finalAnswer;
-   
+    calcResult.value = finalAnswer;
+  }
 }
 
 equalButton.addEventListener('click', calculate);
-
 
 // Clear the Result (AC Sign Button):
 function clearResult() {

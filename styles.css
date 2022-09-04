@@ -21,6 +21,7 @@ button {
   cursor: pointer;
   filter: brightness(90%);
   text-align: center;
+  touch-action: none;
 }
 
 button:active {
@@ -62,7 +63,7 @@ button:active {
   justify-content: center;
   width: 98%;
   margin-inline: auto;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
 

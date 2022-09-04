@@ -3,7 +3,6 @@ let vh = window.innerHeight * 0.01;
 //setting the --vh value:
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-
 //Calculator Result
 const calcResult = document.getElementById('calc');
 
@@ -32,6 +31,19 @@ buttonsContainer.addEventListener('click', (event) => {
   ) {
     return;
   }
+
+  ///////
+
+  if (calcResult.value.length > 11) {
+    calcResult.style.fontSize = '25px';
+    console.log(calcResult.length);
+  } else if (calcResult.value.length > 5) {
+    calcResult.style.fontSize = '50px';
+  } else {
+    calcResult.style.fontSize = '100px';
+  }
+
+  //////
 
   result.push(event.target.innerHTML);
 
@@ -94,5 +106,6 @@ equalButton.addEventListener('click', calculate);
 function clearResult() {
   calcResult.value = '0';
   result = [];
+  calcResult.style.fontSize = '100px';
 }
 clearButton.addEventListener('click', clearResult);
